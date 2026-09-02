@@ -1,0 +1,26 @@
+name: Release Aino theme
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Create draft release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          manifest_version="$(node -p "require('./manifest.json').version")"
+          test "$tag" = "$manifest_version"
+          gh release create "$tag" \
+            --title="$tag" \
+            --generate-notes \
+            --draft \
+            manifest.json theme.css

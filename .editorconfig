@@ -1,0 +1,10 @@
+# top-most EditorConfig file after this directory becomes a standalone repository
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = tab
+indent_size = 4
+tab_width = 4

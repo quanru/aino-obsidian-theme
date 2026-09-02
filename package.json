@@ -1,0 +1,15 @@
+{
+  "name": "@lifeos/aino-obsidian-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A warm, focused theme for Obsidian with complete light and dark modes.",
+  "scripts": {
+    "check": "node scripts/check-theme.mjs && stylelint \"theme.css\"",
+    "lint": "stylelint \"theme.css\"",
+    "version": "node scripts/version-bump.mjs"
+  },
+  "devDependencies": {
+    "stylelint": "^17.14.1",
+    "stylelint-config-obsidianmd": "^0.1.0"
+  }
+}
