@@ -224,7 +224,7 @@ body {
   --aino-accent-soft-strong: #43365c;
   --aino-text-primary: #eaf0f6;
   --aino-text-secondary: #b7c2cc;
-  --aino-text-muted: #83909b;
+  --aino-text-muted: #8795a1;
   --aino-success: #5bb575;
   --aino-warning: #e3b159;
   --aino-error: #e16e61;
@@ -357,6 +357,7 @@ body {
 
 .workspace-split.mod-root .workspace-tab-container {
   background: var(--background-primary);
+  background-image: linear-gradient(var(--background-primary), var(--background-primary));
 }
 
 .workspace-tab-header-container,
@@ -364,23 +365,70 @@ body {
   border-bottom-color: var(--divider-color);
 }
 
+.workspace-split.mod-sidedock .workspace-tab-header-container,
+.workspace-split.mod-sidedock .workspace-tab-container {
+  background-image: linear-gradient(var(--tab-container-background), var(--tab-container-background));
+}
+
+.workspace-ribbon.mod-left,
+.workspace-ribbon.mod-left::before,
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  background-color: var(--background-secondary);
+  background-image: linear-gradient(var(--background-secondary), var(--background-secondary));
+}
+
+.workspace-split.mod-root .workspace-tab-header-container {
+  background-image: linear-gradient(var(--tab-container-background), var(--tab-container-background));
+}
+
 .workspace-split.mod-root .workspace-tab-header {
-  transition:
-    background-color var(--aino-motion-fast) var(--aino-motion-curve),
-    color var(--aino-motion-fast) var(--aino-motion-curve);
+  transition: none;
 }
 
 .workspace-split.mod-root .workspace-tab-header.is-active {
   box-shadow: inset 0 -2px var(--aino-accent-primary);
 }
 
+.workspace-split.mod-root .workspace-tab-header[style*='opacity: 0'] {
+  visibility: hidden;
+}
+
+.workspace-split.mod-left-split > .workspace-tabs.mod-top .workspace-tab-header {
+  transition: none;
+}
+
+.workspace-split.mod-left-split > .workspace-tabs.mod-top .workspace-tab-header.is-active {
+  color: var(--text-accent);
+  background-color: var(--aino-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--aino-accent-primary);
+}
+
 .tree-item-self,
 .nav-file-title,
-.nav-folder-title,
-.suggestion-item {
+.nav-folder-title {
   transition:
     background-color var(--aino-motion-fast) var(--aino-motion-curve),
     color var(--aino-motion-fast) var(--aino-motion-curve);
+}
+
+.suggestion-item {
+  transition: none;
+}
+
+.theme-light .tooltip {
+  --background-modifier-message: var(--aino-text-primary);
+  --text-on-accent: var(--aino-surface-elevated);
+
+  color: var(--text-on-accent);
+  background-color: var(--background-modifier-message);
+}
+
+body.theme-dark :is(button.is-primary, button.mod-cta) {
+  color: var(--text-on-accent);
+}
+
+body.theme-dark button.is-active[title] {
+  color: var(--text-accent-hover);
 }
 
 .menu,
@@ -533,11 +581,9 @@ body :is(button, [tabindex]):not(input, textarea, select):focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .workspace-split.mod-root .workspace-tab-header,
   .tree-item-self,
   .nav-file-title,
   .nav-folder-title,
-  .suggestion-item,
   .tag {
     transition-duration: 0.01ms;
   }

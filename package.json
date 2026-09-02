@@ -1,6 +1,6 @@
 {
   "name": "@lifeos/aino-obsidian-theme",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "A warm, focused theme for Obsidian with complete light and dark modes.",
   "scripts": {
