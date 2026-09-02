@@ -8,6 +8,13 @@ It brings Aino's cream writing surfaces, cool slate text, soft purple accents, a
 
 ![Aino dark mode](./screenshots/aino-dark.png)
 
+## Continue with Aino and LifeOS
+
+Aino theme is part of a broader local-first Markdown ecosystem:
+
+- [**Aino**](https://aino.md/) — an AI-first Markdown workspace for notes, tasks, calendar planning, reviews, and custom AI apps. Open your existing Obsidian vault directly and keep your files local.
+- [**LifeOS for Obsidian**](https://lifeos.md/) — a complete Obsidian productivity system with tasks, calendars, periodic notes, AI-assisted knowledge workflows, and ready-to-use example vaults.
+
 ## Highlights
 
 - Complete light and dark modes.
@@ -47,6 +54,11 @@ See the [official Obsidian theme submission guide](https://docs.obsidian.md/them
 ## 中文说明
 
 Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深浅色模式。它采用暖米白内容面、灰蓝文字、柔和紫粉强调色和克制的层级阴影，同时优先保证长时间书写、键盘导航和正文可读性。
+
+### 探索更多
+
+- [**Aino**](https://aino.md/)：本地优先的 AI Markdown 工作空间，覆盖笔记、任务、日历规划、复盘和自定义 AI 应用，可直接打开现有 Obsidian 仓库。
+- [**LifeOS for Obsidian**](https://lifeos.md/)：完整的 Obsidian 效率系统，提供任务、日历、周期笔记、AI 知识工作流和可直接使用的示例库。
 
 手动安装时，将 `manifest.json` 与 `theme.css` 放入 `<你的仓库>/.obsidian/themes/Aino/`，然后在 Obsidian 的 **设置 → 外观 → 主题** 中选择 **Aino**。
 
