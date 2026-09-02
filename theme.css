@@ -364,13 +364,13 @@ body {
   border-bottom-color: var(--divider-color);
 }
 
-.workspace-tab-header {
+.workspace-split.mod-root .workspace-tab-header {
   transition:
     background-color var(--aino-motion-fast) var(--aino-motion-curve),
     color var(--aino-motion-fast) var(--aino-motion-curve);
 }
 
-.workspace-tab-header.is-active {
+.workspace-split.mod-root .workspace-tab-header.is-active {
   box-shadow: inset 0 -2px var(--aino-accent-primary);
 }
 
@@ -527,13 +527,13 @@ input[type='checkbox'] {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--aino-accent-primary) 20%, transparent);
 }
 
-body :is(button, input, textarea, select, [tabindex]):focus-visible {
+body :is(button, [tabindex]):not(input, textarea, select):focus-visible {
   outline: 2px solid var(--aino-accent-primary);
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .workspace-tab-header,
+  .workspace-split.mod-root .workspace-tab-header,
   .tree-item-self,
   .nav-file-title,
   .nav-folder-title,

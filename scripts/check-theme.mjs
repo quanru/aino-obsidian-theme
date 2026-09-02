@@ -37,6 +37,21 @@ if (!css.includes('.theme-light') || !css.includes('.theme-dark')) {
   errors.push('theme.css must support both light and dark modes');
 }
 
+if (
+  !css.includes('.workspace-split.mod-root .workspace-tab-header {') ||
+  !css.includes('.workspace-split.mod-root .workspace-tab-header.is-active {')
+) {
+  errors.push('workspace tab motion and active styling must be scoped to the root editor split');
+}
+
+if (/^\.workspace-tab-header(?:\.is-active)?\s*\{/m.test(css)) {
+  errors.push('workspace tab styling must not target sidebar icon tabs globally');
+}
+
+if (!css.includes(':not(input, textarea, select):focus-visible')) {
+  errors.push('form controls must use the host focus ring without an additional theme outline');
+}
+
 if (errors.length > 0) {
   console.error(errors.map((error) => `- ${error}`).join('\n'));
   process.exitCode = 1;
