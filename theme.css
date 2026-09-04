@@ -427,6 +427,16 @@ body.theme-dark :is(button.is-primary, button.mod-cta) {
   color: var(--text-on-accent);
 }
 
+body button[class~="lifeos-control-button--primary"]:not(:disabled) {
+  color: var(--text-on-accent);
+  background: var(--accent-gradient, var(--interactive-accent));
+}
+
+body button[class~="lifeos-control-button--primary"]:hover:not(:disabled) {
+  color: var(--text-on-accent);
+  background: var(--accent-gradient, var(--interactive-accent-hover));
+}
+
 body.theme-dark button.is-active[title] {
   color: var(--text-accent-hover);
 }

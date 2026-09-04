@@ -72,9 +72,7 @@ if (
 
 if (
   !css.includes('.workspace-split.mod-left-split > .workspace-tabs.mod-top .workspace-tab-header {') ||
-  !css.includes(
-    '.workspace-split.mod-left-split > .workspace-tabs.mod-top .workspace-tab-header.is-active {',
-  ) ||
+  !css.includes('.workspace-split.mod-left-split > .workspace-tabs.mod-top .workspace-tab-header.is-active {') ||
   !css.includes('background-color: var(--aino-accent-soft);') ||
   !css.includes('box-shadow: inset 0 0 0 1px var(--aino-accent-primary);')
 ) {
@@ -106,6 +104,14 @@ if (
   !css.includes('body.theme-dark button.is-active[title] {')
 ) {
   errors.push('dark theme controls and faint text must retain accessible contrast');
+}
+
+if (
+  !css.includes('body button[class~="lifeos-control-button--primary"]:not(:disabled) {') ||
+  !css.includes('background: var(--accent-gradient, var(--interactive-accent));') ||
+  !css.includes('body button[class~="lifeos-control-button--primary"]:hover:not(:disabled) {\n  color: var(--text-on-accent);')
+) {
+  errors.push('LifeOS primary controls must override the host button surface with an accent background');
 }
 
 if (!css.includes(':not(input, textarea, select):focus-visible')) {
