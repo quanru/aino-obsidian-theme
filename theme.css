@@ -114,7 +114,7 @@ body {
   --background-modifier-form-field-highlighted: var(--aino-accent-soft);
   --background-modifier-error: rgb(196 69 54 / 14%);
   --background-modifier-success: rgb(47 122 75 / 14%);
-  --background-modifier-message: var(--aino-surface-elevated);
+  --background-modifier-message: var(--aino-text-primary);
   --interactive-normal: var(--aino-surface-elevated);
   --interactive-hover: var(--aino-surface-muted);
   --interactive-accent: var(--aino-accent-strong);
@@ -137,6 +137,8 @@ body {
   --icon-color-active: var(--aino-accent-strong);
   --titlebar-background: var(--aino-surface-canvas);
   --titlebar-background-focused: var(--aino-surface-panel);
+  --modal-sidebar-background: var(--aino-surface-elevated);
+  --settings-background: var(--aino-surface-elevated);
   --ribbon-background: var(--aino-surface-canvas);
   --sidebar-markdown-font-size: 14px;
   --tab-container-background: var(--aino-surface-panel);
@@ -257,7 +259,7 @@ body {
   --background-modifier-form-field-highlighted: var(--aino-accent-soft);
   --background-modifier-error: rgb(225 110 97 / 20%);
   --background-modifier-success: rgb(91 181 117 / 20%);
-  --background-modifier-message: var(--aino-surface-elevated);
+  --background-modifier-message: var(--aino-surface-canvas);
   --interactive-normal: var(--aino-surface-elevated);
   --interactive-hover: var(--aino-surface-muted);
   --interactive-accent: var(--aino-accent-primary);
@@ -280,6 +282,8 @@ body {
   --icon-color-active: var(--aino-accent-strong);
   --titlebar-background: var(--aino-surface-canvas);
   --titlebar-background-focused: var(--aino-surface-panel);
+  --modal-sidebar-background: var(--aino-surface-elevated);
+  --settings-background: var(--aino-surface-elevated);
   --ribbon-background: var(--aino-surface-canvas);
   --sidebar-markdown-font-size: 14px;
   --tab-container-background: var(--aino-surface-panel);
@@ -427,18 +431,23 @@ body.theme-dark :is(button.is-primary, button.mod-cta) {
   color: var(--text-on-accent);
 }
 
-body button[class~="lifeos-control-button--primary"]:not(:disabled) {
+body button[class~='lifeos-control-button--primary']:not(:disabled) {
   color: var(--text-on-accent);
   background: var(--accent-gradient, var(--interactive-accent));
 }
 
-body button[class~="lifeos-control-button--primary"]:hover:not(:disabled) {
+body button[class~='lifeos-control-button--primary']:hover:not(:disabled) {
   color: var(--text-on-accent);
   background: var(--accent-gradient, var(--interactive-accent-hover));
 }
 
 body.theme-dark button.is-active[title] {
   color: var(--text-accent-hover);
+}
+
+body .lifeos-view-module[data-lifeos-view='calendar'] {
+  --surface-canvas: transparent;
+  --lifeos-calendar-canvas-bg: transparent;
 }
 
 .menu,

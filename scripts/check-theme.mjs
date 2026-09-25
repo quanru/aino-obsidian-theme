@@ -99,6 +99,28 @@ if (
 }
 
 if (
+  !css.includes('--background-modifier-message: var(--aino-text-primary);') ||
+  !css.includes('--background-modifier-message: var(--aino-surface-canvas);')
+) {
+  errors.push('notices must retain a dark surface behind Obsidian’s fixed light foreground');
+}
+
+if (
+  !css.includes('--modal-sidebar-background: var(--aino-surface-elevated);') ||
+  !css.includes('--settings-background: var(--aino-surface-elevated);')
+) {
+  errors.push('settings navigation and content must share the elevated Aino surface');
+}
+
+if (
+  !css.includes("body .lifeos-view-module[data-lifeos-view='calendar'] {") ||
+  !css.includes('--surface-canvas: transparent;') ||
+  !css.includes('--lifeos-calendar-canvas-bg: transparent;')
+) {
+  errors.push('the LifeOS big calendar canvas must inherit the active Aino workspace surface');
+}
+
+if (
   !css.includes('--aino-text-muted: #8795a1;') ||
   !css.includes('body.theme-dark :is(button.is-primary, button.mod-cta) {') ||
   !css.includes('body.theme-dark button.is-active[title] {')
@@ -107,9 +129,11 @@ if (
 }
 
 if (
-  !css.includes('body button[class~="lifeos-control-button--primary"]:not(:disabled) {') ||
+  !css.includes("body button[class~='lifeos-control-button--primary']:not(:disabled) {") ||
   !css.includes('background: var(--accent-gradient, var(--interactive-accent));') ||
-  !css.includes('body button[class~="lifeos-control-button--primary"]:hover:not(:disabled) {\n  color: var(--text-on-accent);')
+  !css.includes(
+    "body button[class~='lifeos-control-button--primary']:hover:not(:disabled) {\n  color: var(--text-on-accent);",
+  )
 ) {
   errors.push('LifeOS primary controls must override the host button surface with an accent background');
 }
