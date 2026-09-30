@@ -35,6 +35,7 @@ Aino theme is part of a broader local-first Markdown ecosystem:
 
 ```bash
 npm install
+npm run build
 npm run check
 ```
 
@@ -65,3 +66,5 @@ Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深�
 ## License
 
 [MIT](./LICENSE) © 2026 quanru
+
+Theme sources live in `src/palette.css` and `src/interface.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.

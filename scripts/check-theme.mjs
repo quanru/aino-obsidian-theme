@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { assembleTheme } from './build-theme.mjs';
 
 const manifest = JSON.parse(await readFile(new URL('../manifest.json', import.meta.url), 'utf8'));
 const versions = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'));
@@ -6,6 +7,10 @@ const css = await readFile(new URL('../theme.css', import.meta.url), 'utf8');
 
 const requiredManifestFields = ['name', 'author', 'version', 'minAppVersion'];
 const errors = [];
+
+if (css !== (await assembleTheme())) {
+  errors.push('theme.css is out of date; run npm run build');
+}
 
 for (const field of requiredManifestFields) {
   if (typeof manifest[field] !== 'string' || manifest[field].trim() === '') {
@@ -99,10 +104,13 @@ if (
 }
 
 if (
-  !css.includes('--background-modifier-message: var(--aino-text-primary);') ||
+  !css.includes('--background-modifier-message: var(--aino-surface-elevated);') ||
+  !css.includes('.theme-light .notice {\n  color: var(--aino-text-primary);\n}') ||
   !css.includes('--background-modifier-message: var(--aino-surface-canvas);')
 ) {
-  errors.push('notices must retain a dark surface behind Obsidian’s fixed light foreground');
+  errors.push(
+    'light notices must use an elevated light surface with dark text; dark notices must retain their dark surface',
+  );
 }
 
 if (
