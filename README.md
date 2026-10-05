@@ -20,6 +20,7 @@ Aino theme is part of a broader local-first Markdown ecosystem:
 - Complete light and dark modes.
 - A warm writing canvas with clearly separated sidebars and elevated surfaces.
 - Accessible link, button, selection, and keyboard-focus states.
+- Compact calendar, timeline, periodic-note, and review navigation with clear arrows and a soft Today button.
 - Polished Markdown, metadata, callouts, tables, tags, Canvas, and graph colors.
 - System fonts and local CSS only: no external font, image, or network dependency.
 - Reduced-motion support and no `!important` or expensive `:has()` selectors.
@@ -56,6 +57,8 @@ See the [official Obsidian theme submission guide](https://docs.obsidian.md/them
 
 Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深浅色模式。它采用暖米白内容面、灰蓝文字、柔和紫粉强调色和克制的层级阴影，同时优先保证长时间书写、键盘导航和正文可读性。
 
+日历、时间线、周期笔记和复盘的导航按钮采用统一尺寸和轻量样式；箭头清晰可见，“今天”以柔和强调色呈现，兼顾深浅色与窄屏。
+
 ### 探索更多
 
 - [**Aino**](https://aino.md/)：本地优先的 AI Markdown 工作空间，覆盖笔记、任务、日历规划、复盘和自定义 AI 应用，可直接打开现有 Obsidian 仓库。
@@ -67,4 +70,4 @@ Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深�
 
 [MIT](./LICENSE) © 2026 quanru
 
-Theme sources live in `src/palette.css` and `src/interface.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.
+Theme sources live in `src/palette.css`, `src/interface.css`, and `src/controls.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.

@@ -17,6 +17,12 @@
   background-image: linear-gradient(var(--tab-container-background), var(--tab-container-background));
 }
 
+.workspace-split.mod-left-split .workspace-tab-header-container,
+.workspace-split.mod-left-split .workspace-tab-container {
+  background-color: var(--background-secondary);
+  background-image: linear-gradient(var(--background-secondary), var(--background-secondary));
+}
+
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-left::before,
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile {

@@ -1,4 +1,4 @@
-/* @size-limit-exempt: generated from src/palette.css and src/interface.css. */
+/* @size-limit-exempt: generated from src/palette.css, src/interface.css and src/controls.css. */
 
 /*
  * Aino for Obsidian
@@ -376,6 +376,12 @@ body {
   background-image: linear-gradient(var(--tab-container-background), var(--tab-container-background));
 }
 
+.workspace-split.mod-left-split .workspace-tab-header-container,
+.workspace-split.mod-left-split .workspace-tab-container {
+  background-color: var(--background-secondary);
+  background-image: linear-gradient(var(--background-secondary), var(--background-secondary));
+}
+
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-left::before,
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
@@ -613,3 +619,142 @@ body :is(button, [tabindex]):not(input, textarea, select):focus-visible {
     transition-duration: 0.01ms;
   }
 }
+
+/* stylelint-disable selector-class-pattern -- LifeOS uses existing BEM class names. */
+
+/* Keep navigation controls flat and aligned across LifeOS views. Explicit
+ * padding protects fixed-width icons from Obsidian's native button padding. */
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation > button,
+    .lifeos-calendar-feature__navigation > button,
+    .periodic-notes-panel .periodic-nav-btn,
+    .periodic-notes-panel .periodic-today-btn,
+    .m-task-date-quick-menu__month-button,
+    .lifeos-ai-review-view__navigation > button,
+    .lifeos-ai-review-view .lifeos-review-period-navigation > button
+  ) {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 32px;
+  min-height: 32px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--aino-radius-sm);
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  text-shadow: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--aino-motion-fast) var(--aino-motion-curve),
+    color var(--aino-motion-fast) var(--aino-motion-curve);
+}
+
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation > .nav-button,
+    .lifeos-calendar-feature__navigation > button[aria-label],
+    .periodic-notes-panel .periodic-nav-btn,
+    .m-task-date-quick-menu__month-button,
+    .lifeos-ai-review-view .lifeos-review-period-navigation > button[aria-label]
+  ) {
+  width: 32px;
+  min-width: 32px;
+  padding: 0;
+}
+
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation > .today-button,
+    .lifeos-calendar-feature__navigation > button:not([aria-label]),
+    .periodic-notes-panel .periodic-today-btn,
+    .lifeos-ai-review-view .lifeos-review-current
+  ) {
+  background: var(--aino-accent-soft);
+  color: var(--text-accent);
+}
+
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation > button,
+    .lifeos-calendar-feature__navigation > button,
+    .periodic-notes-panel .periodic-nav-btn,
+    .periodic-notes-panel .periodic-today-btn,
+    .m-task-date-quick-menu__month-button,
+    .lifeos-ai-review-view__navigation > button,
+    .lifeos-ai-review-view .lifeos-review-period-navigation > button
+  ):hover:not(:disabled) {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+  box-shadow: none;
+  transform: none;
+}
+
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation > button,
+    .lifeos-calendar-feature__navigation > button,
+    .periodic-notes-panel .periodic-nav-btn,
+    .periodic-notes-panel .periodic-today-btn,
+    .m-task-date-quick-menu__month-button,
+    .lifeos-ai-review-view__navigation > button,
+    .lifeos-ai-review-view .lifeos-review-period-navigation > button
+  ):disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Preserve vector icons even inside narrow flex controls. */
+body:is(.theme-light, .theme-dark)
+  :is(
+    .timeline-navigation,
+    .lifeos-calendar-feature__header,
+    .periodic-notes-panel .periodic-nav,
+    .m-task-date-quick-menu__calendar-header,
+    .lifeos-ai-review-view__navigation,
+    .lifeos-ai-review-view .lifeos-review-period-navigation
+  )
+  button
+  > svg {
+  flex-shrink: 0;
+}
+
+body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented {
+  padding: 3px;
+  border-radius: var(--aino-radius-sm);
+  background: var(--background-primary-alt);
+}
+
+body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button {
+  box-shadow: none;
+}
+
+body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button.is-active {
+  background: var(--aino-accent-soft);
+  color: var(--text-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:is(.theme-light, .theme-dark)
+    :is(
+      .timeline-navigation > button,
+      .lifeos-calendar-feature__navigation > button,
+      .periodic-notes-panel .periodic-nav-btn,
+      .periodic-notes-panel .periodic-today-btn,
+      .m-task-date-quick-menu__month-button,
+      .lifeos-ai-review-view__navigation > button,
+      .lifeos-ai-review-view .lifeos-review-period-navigation > button
+    ) {
+    transition: none;
+  }
+}
+/* stylelint-enable selector-class-pattern */
