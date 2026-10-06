@@ -5,7 +5,7 @@
   "description": "A warm, focused theme for Obsidian with complete light and dark modes.",
   "scripts": {
     "build": "node scripts/build-theme.mjs --write",
-    "check": "node scripts/check-theme.mjs && stylelint \"theme.css\" \"src/*.css\"",
+    "check": "node scripts/check-theme.mjs && node scripts/check-release-notes.mjs && stylelint \"theme.css\" \"src/*.css\"",
     "lint": "stylelint \"theme.css\"",
     "version": "node scripts/version-bump.mjs"
   },

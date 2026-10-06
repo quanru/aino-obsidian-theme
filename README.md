@@ -71,3 +71,5 @@ Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深�
 [MIT](./LICENSE) © 2026 quanru
 
 Theme sources live in `src/palette.css`, `src/interface.css`, and `src/controls.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.
+
+Public release titles and notes default to English. Before tagging, update `RELEASE_NOTES.md` with a `## <version>` heading matching the manifest; the release workflow validates this file and uses it for the draft release.

@@ -19,8 +19,9 @@ jobs:
           tag="${GITHUB_REF#refs/tags/}"
           manifest_version="$(node -p "require('./manifest.json').version")"
           test "$tag" = "$manifest_version"
+          node scripts/check-release-notes.mjs
           gh release create "$tag" \
-            --title="$tag" \
-            --generate-notes \
+            --title="Aino $tag" \
+            --notes-file=RELEASE_NOTES.md \
             --draft \
             manifest.json theme.css
