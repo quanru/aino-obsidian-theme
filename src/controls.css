@@ -136,3 +136,19 @@ body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector 
   }
 }
 /* stylelint-enable selector-class-pattern */
+
+/* Primary actions use a pale fill; small status markers keep their accent. */
+body:is(.theme-light, .theme-dark) button.mod-cta,
+body:is(.theme-light, .theme-dark) button.is-primary,
+body:is(.theme-light, .theme-dark) button[class~='lifeos-control-button--primary'] {
+  color: var(--text-normal);
+  background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+  box-shadow: none;
+}
+
+body:is(.theme-light, .theme-dark) button.mod-cta:hover:not(:disabled),
+body:is(.theme-light, .theme-dark) button.is-primary:hover:not(:disabled),
+body:is(.theme-light, .theme-dark) button[class~='lifeos-control-button--primary']:hover:not(:disabled) {
+  color: var(--text-normal);
+  background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);
+}

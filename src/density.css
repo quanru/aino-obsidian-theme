@@ -1,0 +1,51 @@
+/* Keep useful toolbar wrapping while restoring comfortable visual spacing. */
+/* stylelint-disable selector-class-pattern -- LifeOS host uses existing BEM names. */
+body .view-content.lifeos-calendar {
+  padding: 0;
+}
+
+body .lifeos-calendar-feature__header {
+  gap: 10px 16px;
+  padding: 10px 16px;
+}
+
+/* Medium-width calendars keep their date title beside the controls. */
+@container lifeos-calendar (min-width: 34rem) {
+  body .lifeos-calendar-feature__header .lifeos-calendar-feature__left {
+    flex-wrap: nowrap;
+  }
+
+  body .lifeos-calendar-feature__header .lifeos-calendar-feature__left h2 {
+    order: 0;
+    width: auto;
+    flex: 0 1 auto;
+  }
+}
+
+/* Let toolbar groups share a row when they fit; keep natural wrapping below. */
+@container lifeos-calendar (min-width: 48rem) {
+  body .lifeos-calendar-feature__header .lifeos-calendar-feature__left {
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  body .lifeos-calendar-feature__header .lifeos-calendar-feature__views {
+    width: auto;
+    flex: 0 1 auto;
+  }
+}
+
+/* Mobile uses the same canvas throughout the left drawer. */
+body.is-mobile .workspace-drawer.mod-left {
+  background: var(--background-secondary);
+}
+
+body.is-mobile .workspace-drawer.mod-left .workspace-leaf-content,
+body.is-mobile .workspace-drawer.mod-left .workspace-sidedock-vault-profile {
+  background: transparent;
+}
+
+body.is-mobile .lifeos-calendar-feature__header {
+  padding-block: 10px;
+}
+/* stylelint-enable selector-class-pattern */

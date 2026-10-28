@@ -137,13 +137,14 @@ if (
 }
 
 if (
-  !css.includes("body button[class~='lifeos-control-button--primary']:not(:disabled) {") ||
-  !css.includes('background: var(--accent-gradient, var(--interactive-accent));') ||
+  !css.includes("body:is(.theme-light, .theme-dark) button[class~='lifeos-control-button--primary'] {") ||
+  !css.includes('background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);') ||
   !css.includes(
-    "body button[class~='lifeos-control-button--primary']:hover:not(:disabled) {\n  color: var(--text-on-accent);",
-  )
+    "body:is(.theme-light, .theme-dark) button[class~='lifeos-control-button--primary']:hover:not(:disabled) {\n  color: var(--text-normal);",
+  ) ||
+  !css.includes('background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);')
 ) {
-  errors.push('LifeOS primary controls must override the host button surface with an accent background');
+  errors.push('LifeOS primary controls must use readable text and pale accent surfaces for normal and hover states');
 }
 
 if (!css.includes(':not(input, textarea, select):focus-visible')) {
