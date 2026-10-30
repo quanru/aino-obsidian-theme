@@ -1,4 +1,6 @@
-# Aino
+# Aino Theme for Obsidian
+
+<img src="images/icon.svg" alt="Aino Theme" width="96" />
 
 Aino is a warm, focused theme for Obsidian, shaped around a calm semantic color system.
 
