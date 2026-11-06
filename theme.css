@@ -384,6 +384,8 @@ body {
 
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-left::before,
+.workspace-ribbon.mod-primary,
+.workspace-ribbon.mod-primary::before,
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   background-color: var(--background-secondary);
   background-image: linear-gradient(var(--background-secondary), var(--background-secondary));

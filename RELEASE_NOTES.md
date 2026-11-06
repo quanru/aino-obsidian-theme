@@ -1,4 +1,4 @@
-## 1.0.9
+## 1.0.10
 
-- Refine shared control colors and selected states in light and dark themes.
-- Improve consistency across editor and workspace controls.
+- Fix ribbon background rendering on newer Obsidian versions, including translucent windows.
+- Keep the ribbon and its titlebar extension consistent with the left sidebar in light and dark modes.
