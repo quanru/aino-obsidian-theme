@@ -152,3 +152,7 @@ body:is(.theme-light, .theme-dark) button[class~='lifeos-control-button--primary
   color: var(--text-normal);
   background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);
 }
+
+body:is(.theme-light, .theme-dark) .mod-settings .setting-item-control button:not(:disabled):active {
+  background-color: color-mix(in srgb, var(--interactive-accent) 22%, var(--background-primary));
+}

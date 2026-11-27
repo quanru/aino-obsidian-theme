@@ -1,4 +1,4 @@
-## 1.0.10
+## 1.0.11
 
-- Fix ribbon background rendering on newer Obsidian versions, including translucent windows.
-- Keep the ribbon and its titlebar extension consistent with the left sidebar in light and dark modes.
+- Keep tab highlights opaque and align their lower edges when Obsidian reveals an open note.
+- Improve pressed-button feedback in Settings.
