@@ -129,11 +129,34 @@ if (
 }
 
 if (
-  !css.includes('--aino-text-muted: #8795a1;') ||
   !css.includes('body.theme-dark :is(button.is-primary, button.mod-cta) {') ||
   !css.includes('body.theme-dark button.is-active[title] {')
 ) {
-  errors.push('dark theme controls and faint text must retain accessible contrast');
+  errors.push('dark theme controls must retain their foreground colors');
+}
+
+// Check the actual palette pairs so future adjustments can change the hues.
+function luminance(hex) {
+  const linear = hex.match(/../g).map((pair) => {
+    const value = parseInt(pair, 16) / 255;
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+}
+
+for (const mode of ['light', 'dark']) {
+  const palette = css.match(new RegExp(`^\\.theme-${mode} \\{([^}]+)\\}`, 'm'))?.[1] ?? '';
+  const colors = Object.fromEntries(
+    [...palette.matchAll(/--aino-([\w-]+): #([\da-f]{6});/gi)].map(([, name, hex]) => [name, luminance(hex)]),
+  );
+  for (const foreground of ['text-primary', 'text-secondary', 'text-muted']) {
+    for (const surface of ['surface-panel', 'surface-canvas', 'surface-elevated', 'accent-soft']) {
+      const pair = [colors[foreground], colors[surface]];
+      const ratio = (Math.max(...pair) + 0.05) / (Math.min(...pair) + 0.05);
+      if (!(ratio >= 4.5))
+        errors.push(`${mode} ${foreground} on ${surface}: contrast ${ratio.toFixed(2)} (minimum 4.5)`);
+    }
+  }
 }
 
 if (

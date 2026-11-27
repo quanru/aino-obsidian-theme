@@ -1,0 +1,79 @@
+/* Opt in on the scrolling element itself. Keep fixed headers and actions outside it. */
+@property --studio-scroll-start-fade {
+  syntax: '<length>';
+  inherits: false;
+  /* stylelint-disable-next-line length-zero-no-unit -- Registered <length> requires a dimension. */
+  initial-value: 0px;
+}
+
+@property --studio-scroll-end-fade {
+  syntax: '<length>';
+  inherits: false;
+  /* stylelint-disable-next-line length-zero-no-unit -- Registered <length> requires a dimension. */
+  initial-value: 0px;
+}
+
+@keyframes studio-scroll-start-fade {
+  from {
+    --studio-scroll-start-fade: 0px;
+  }
+
+  to {
+    --studio-scroll-start-fade: 14px;
+  }
+}
+
+@keyframes studio-scroll-end-fade {
+  from {
+    --studio-scroll-end-fade: 14px;
+  }
+
+  to {
+    --studio-scroll-end-fade: 0px;
+  }
+}
+
+@supports (animation-timeline: scroll(self block)) and (animation-range: 0% 14px) {
+  @media (forced-colors: none) and (prefers-contrast: no-preference) {
+    :is(.nav-files-container, .search-result-container, .tag-container):not(:focus-within, :focus-visible) {
+      mask-image: linear-gradient(
+        var(--studio-scroll-fade-direction, to bottom),
+        transparent,
+        #000 var(--studio-scroll-start-fade),
+        #000 calc(100% - var(--studio-scroll-end-fade)),
+        transparent
+      );
+      animation:
+        studio-scroll-start-fade auto linear both,
+        studio-scroll-end-fade auto linear both;
+      animation-timeline: scroll(self block), scroll(self block);
+
+      /* Scroll metrics can differ by a few pixels at fractional zoom and with overlay scrollbars. */
+      animation-range:
+        3px 17px,
+        calc(100% - 17px) calc(100% - 3px);
+    }
+
+    /* stylelint-disable selector-class-pattern -- Shared inline-axis modifier. */
+    .studio-scroll-edge-fade--inline:not(:focus-within, :focus-visible) {
+      --studio-scroll-fade-direction: to right;
+
+      animation-timeline: scroll(self inline), scroll(self inline);
+    }
+
+    .studio-scroll-edge-fade--inline:dir(rtl) {
+      --studio-scroll-fade-direction: to left;
+    }
+
+    /* stylelint-enable selector-class-pattern */
+
+    @media (prefers-reduced-motion: reduce) {
+      :is(.nav-files-container, .search-result-container, .tag-container):not(:focus-within, :focus-visible) {
+        animation-timing-function: step-end, step-end;
+        animation-range:
+          3px 4px,
+          calc(100% - 4px) calc(100% - 3px);
+      }
+    }
+  }
+}

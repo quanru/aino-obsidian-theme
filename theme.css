@@ -1,4 +1,4 @@
-/* @size-limit-exempt: generated from src/palette.css, src/interface.css, src/controls.css and src/density.css. */
+/* @size-limit-exempt: generated from the theme sources and shared list styles. */
 
 /*
  * Aino for Obsidian
@@ -11,7 +11,7 @@ body {
   --aino-accent-tertiary: #ea9999;
   --aino-accent-strong: #834691;
   --aino-success: #2f7a4b;
-  --aino-warning: #a56a16;
+  --aino-warning: #905b11;
   --aino-error: #c44536;
   --aino-gradient: linear-gradient(135deg, #a87bb2 0%, #c27ba0 48%, #ea9999 100%);
   --aino-radius-xs: 4px;
@@ -56,8 +56,19 @@ body {
   --blockquote-border-thickness: 3px;
   --blockquote-font-style: normal;
   --code-size: 0.9em;
+  --code-border-width: 1px;
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: currentcolor;
   --list-indent: 2em;
   --list-spacing: 0.2em;
+  --table-background: var(--aino-surface-elevated);
+  --table-header-background: var(--aino-surface-panel);
+  --table-header-background-hover: var(--table-header-background);
+  --table-row-alt-background: color-mix(in srgb, var(--table-background) 65%, var(--aino-surface-panel));
+  --table-column-alt-background: transparent;
+  --table-row-background-hover: var(--aino-accent-soft);
+  --table-row-alt-background-hover: var(--table-row-background-hover);
   --table-border-width: 1px;
   --table-header-weight: 600;
   --tag-radius: 999px;
@@ -72,7 +83,7 @@ body {
   --prompt-border-width: 1px;
   --status-bar-radius: var(--aino-radius-sm) 0 0 0;
   --embed-border-start: 3px solid var(--background-modifier-border);
-  --canvas-color: var(--text-normal);
+  --canvas-color: var(--text-faint);
 }
 
 .theme-light {
@@ -87,7 +98,7 @@ body {
   --aino-accent-soft-strong: #e8dbea;
   --aino-text-primary: #1b2430;
   --aino-text-secondary: #5d6875;
-  --aino-text-muted: #88929d;
+  --aino-text-muted: #626b75;
   --color-base-00: var(--aino-surface-elevated);
   --color-base-05: var(--aino-surface-panel);
   --color-base-10: #f8f4ed;
@@ -172,11 +183,11 @@ body {
   --code-function: var(--aino-accent-strong);
   --code-important: var(--aino-error);
   --code-keyword: var(--aino-accent-strong);
-  --code-operator: var(--aino-accent-primary);
+  --code-operator: var(--aino-accent-strong);
   --code-property: var(--aino-warning);
   --code-punctuation: var(--aino-text-secondary);
   --code-string: var(--aino-success);
-  --code-tag: var(--aino-accent-primary);
+  --code-tag: var(--aino-accent-strong);
   --code-value: var(--aino-warning);
   --link-color: var(--aino-accent-strong);
   --link-color-hover: #713c7d;
@@ -185,13 +196,9 @@ body {
   --link-unresolved-color: var(--aino-text-muted);
   --list-marker-color: var(--aino-text-muted);
   --list-marker-color-hover: var(--aino-text-secondary);
-  --table-background: var(--aino-surface-elevated);
   --table-border-color: rgb(27 36 48 / 10%);
-  --table-header-background: var(--aino-surface-muted);
   --table-header-border-color: rgb(27 36 48 / 16%);
   --table-header-color: var(--aino-text-primary);
-  --table-row-alt-background: var(--aino-surface-panel);
-  --table-row-background-hover: var(--aino-surface-muted);
   --tag-color: var(--aino-accent-strong);
   --tag-color-hover: #713c7d;
   --tag-background: var(--aino-accent-soft);
@@ -201,11 +208,11 @@ body {
   --metadata-background: var(--aino-surface-panel);
   --metadata-border-color: rgb(27 36 48 / 8%);
   --callout-border-width: 1px;
-  --callout-border-opacity: 18%;
+  --callout-border-opacity: 0.18;
   --callout-title-color: var(--aino-text-primary);
   --canvas-background: var(--aino-surface-canvas);
   --canvas-card-label-color: var(--aino-text-secondary);
-  --graph-line: rgb(93 104 117 / 28%);
+  --graph-line: rgb(93 104 117 / 70%);
   --graph-node: var(--aino-accent-primary);
   --graph-node-focused: var(--aino-accent-tertiary);
   --graph-node-tag: var(--aino-accent-secondary);
@@ -228,7 +235,7 @@ body {
   --aino-accent-soft-strong: #43365c;
   --aino-text-primary: #eaf0f6;
   --aino-text-secondary: #b7c2cc;
-  --aino-text-muted: #8795a1;
+  --aino-text-muted: #909da9;
   --aino-success: #5bb575;
   --aino-warning: #e3b159;
   --aino-error: #e16e61;
@@ -317,11 +324,11 @@ body {
   --code-function: var(--aino-accent-strong);
   --code-important: var(--aino-error);
   --code-keyword: var(--aino-accent-strong);
-  --code-operator: var(--aino-accent-primary);
+  --code-operator: var(--aino-accent-strong);
   --code-property: var(--aino-warning);
   --code-punctuation: var(--aino-text-secondary);
   --code-string: var(--aino-success);
-  --code-tag: var(--aino-accent-primary);
+  --code-tag: var(--aino-accent-strong);
   --code-value: var(--aino-warning);
   --link-color: var(--aino-accent-strong);
   --link-color-hover: #d2a7dc;
@@ -330,13 +337,9 @@ body {
   --link-unresolved-color: var(--aino-text-muted);
   --list-marker-color: var(--aino-text-muted);
   --list-marker-color-hover: var(--aino-text-secondary);
-  --table-background: var(--aino-surface-elevated);
   --table-border-color: rgb(231 238 246 / 9%);
-  --table-header-background: var(--aino-surface-muted);
   --table-header-border-color: rgb(231 238 246 / 16%);
   --table-header-color: var(--aino-text-primary);
-  --table-row-alt-background: var(--aino-surface-panel);
-  --table-row-background-hover: var(--aino-surface-muted);
   --tag-color: var(--aino-accent-strong);
   --tag-color-hover: #d2a7dc;
   --tag-background: var(--aino-accent-soft);
@@ -346,11 +349,11 @@ body {
   --metadata-background: var(--aino-surface-panel);
   --metadata-border-color: rgb(231 238 246 / 8%);
   --callout-border-width: 1px;
-  --callout-border-opacity: 22%;
+  --callout-border-opacity: 0.22;
   --callout-title-color: var(--aino-text-primary);
   --canvas-background: var(--aino-surface-canvas);
   --canvas-card-label-color: var(--aino-text-secondary);
-  --graph-line: rgb(183 194 204 / 28%);
+  --graph-line: rgb(183 194 204 / 60%);
   --graph-node: var(--aino-accent-primary);
   --graph-node-focused: var(--aino-accent-tertiary);
   --graph-node-tag: var(--aino-accent-secondary);
@@ -429,19 +432,25 @@ body {
 }
 
 .tree-item-self,
-.nav-file-title,
-.nav-folder-title {
-  transition:
-    background-color var(--aino-motion-fast) var(--aino-motion-curve),
-    color var(--aino-motion-fast) var(--aino-motion-curve);
-}
-
 .suggestion-item {
   transition: none;
 }
 
+.notice,
+.tooltip {
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  box-shadow: inset 0 0 0 1px var(--background-modifier-border), var(--shadow-s);
+}
+
 .theme-light .notice {
   color: var(--aino-text-primary);
+}
+
+.tooltip {
+  max-inline-size: min(22rem, calc(100vw - 2rem));
 }
 
 .theme-light .tooltip {
@@ -473,12 +482,18 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   box-shadow: var(--shadow-l);
 }
 
-.menu {
-  padding: var(--size-2-2);
+.popover.hover-popover .markdown-preview-view {
+  overscroll-behavior-y: contain;
 }
 
-.menu-item {
-  border-radius: var(--aino-radius-sm);
+.menu {
+  --aino-menu-padding: var(--size-2-2);
+
+  padding: var(--aino-menu-padding);
+}
+
+.menu .menu-item {
+  border-radius: max(var(--aino-radius-xs), calc(var(--menu-radius) - var(--aino-menu-padding) - 1px));
 }
 
 .inline-title {
@@ -497,19 +512,28 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   letter-spacing: -0.015em;
 }
 
+.markdown-preview-section > :is(.el-h1, .el-h2, .el-h3) > :is(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.markdown-preview-section > .el-p > p {
+  text-wrap: pretty;
+  text-autospace: normal;
+}
+
+.markdown-preview-section > .el-p > p code {
+  text-autospace: no-autospace;
+}
+
 .markdown-rendered blockquote {
   padding: var(--size-4-2) var(--size-4-4);
   border-radius: 0 var(--aino-radius-sm) var(--aino-radius-sm) 0;
   background: var(--background-primary-alt);
 }
 
-.markdown-rendered pre,
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-  border: 1px solid var(--background-modifier-border);
-}
 /* stylelint-enable selector-class-pattern */
 
-.markdown-rendered table {
+.markdown-rendered .el-table table {
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid var(--table-border-color);
@@ -517,12 +541,56 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   overflow: hidden;
 }
 
-.markdown-rendered th:first-child {
-  border-top-left-radius: var(--aino-radius-sm);
+/* The table owns the frame. Each pair of neighboring cells shares one rule. */
+.markdown-rendered .el-table :is(th, td) {
+  border: 0;
 }
 
-.markdown-rendered th:last-child {
-  border-top-right-radius: var(--aino-radius-sm);
+.markdown-rendered .el-table tr > :is(th, td) + :is(th, td) {
+  border-inline-start: var(--table-border-width) solid var(--table-border-color);
+}
+
+.markdown-rendered .el-table tbody > tr > td {
+  border-block-start: var(--table-border-width) solid var(--table-border-color);
+}
+
+/* LifeOS advanced lists, including the older Ant Design renderer. */
+.lifeos-advanced-table :is(table.advanced-table, .ant-table-content > table) {
+  margin-block: 0;
+}
+
+.lifeos-advanced-table :is(.advanced-table-wrapper, .ant-table) {
+  background: var(--table-background);
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > thead > tr > th, .ant-table-wrapper .ant-table-thead > tr > th.ant-table-cell) {
+  /* The legacy resizable header also paints this token on its inner box. */
+  --background-secondary-alt: var(--table-header-background);
+
+  background: var(--table-header-background);
+  transition: none;
+}
+
+.lifeos-advanced-table :is(.advanced-table > tbody > tr, .ant-table-tbody > .ant-table-row) {
+  --aino-list-row-background: var(--table-background);
+
+  background: var(--aino-list-row-background);
+  transition: none;
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > tbody > tr:not(.advanced-table-status-row), .ant-table-tbody > .ant-table-row):hover {
+  --aino-list-row-background: var(--table-row-background-hover);
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > tbody > tr > td, .ant-table-wrapper .ant-table-tbody > .ant-table-row > .ant-table-cell) {
+  /* The legacy fixed column reads this token from its inline background. */
+  --background-secondary-alt: var(--aino-list-row-background);
+
+  background: var(--aino-list-row-background);
+  transition: none;
 }
 
 .callout {
@@ -615,11 +683,24 @@ body :is(button, [tabindex]):not(input, textarea, select):focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tree-item-self,
-  .nav-file-title,
-  .nav-folder-title,
   .tag {
     transition-duration: 0.01ms;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .notice {
+    animation: aino-notice-enter var(--aino-motion-fast) var(--aino-motion-curve);
+  }
+}
+
+@keyframes aino-notice-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -686,6 +767,24 @@ body:is(.theme-light, .theme-dark)
   color: var(--text-accent);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body:is(.theme-light, .theme-dark)
+    :is(
+      .timeline-navigation > button,
+      .lifeos-calendar-feature__navigation > button,
+      .periodic-notes-panel .periodic-nav-btn,
+      .periodic-notes-panel .periodic-today-btn,
+      .m-task-date-quick-menu__month-button,
+      .lifeos-ai-review-view__navigation > button,
+      .lifeos-ai-review-view .lifeos-review-period-navigation > button
+    ):hover:not(:disabled, [aria-disabled='true']) {
+    background: var(--background-modifier-hover);
+    color: var(--text-normal);
+    box-shadow: none;
+    transform: none;
+  }
+}
+
 body:is(.theme-light, .theme-dark)
   :is(
     .timeline-navigation > button,
@@ -695,11 +794,12 @@ body:is(.theme-light, .theme-dark)
     .m-task-date-quick-menu__month-button,
     .lifeos-ai-review-view__navigation > button,
     .lifeos-ai-review-view .lifeos-review-period-navigation > button
-  ):hover:not(:disabled) {
-  background: var(--background-modifier-hover);
+  ):active:not(:disabled, [aria-disabled='true']) {
+  background: var(--aino-accent-soft-strong);
+  background-image: linear-gradient(color-mix(in srgb, var(--text-normal) 16%, transparent), transparent 3px);
   color: var(--text-normal);
-  box-shadow: none;
   transform: none;
+  transition-duration: 0s;
 }
 
 body:is(.theme-light, .theme-dark)
@@ -732,18 +832,29 @@ body:is(.theme-light, .theme-dark)
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented {
-  padding: 3px;
-  border-radius: var(--aino-radius-sm);
+  padding: var(--size-4-1);
+  border-radius: var(--aino-radius-md);
   background: var(--background-primary-alt);
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button {
+  border-radius: var(--aino-radius-sm);
   box-shadow: none;
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button.is-active {
   background: var(--aino-accent-soft);
   color: var(--text-accent);
+}
+
+:is(
+  .timeline-navigation > .date-range-label,
+  .lifeos-calendar-feature__left > h2,
+  .periodic-notes-panel .periodic-nav-title,
+  .m-task-date-quick-menu__month-label,
+  .lifeos-review-period-navigation > strong
+) {
+  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -829,7 +940,96 @@ body.is-mobile .workspace-drawer.mod-left .workspace-sidedock-vault-profile {
   background: transparent;
 }
 
+body.is-mobile .workspace-drawer .nav-files-container {
+  overscroll-behavior-y: contain;
+}
+
+body.is-mobile .workspace-drawer .nav-file-title,
+body.is-mobile .workspace-drawer .nav-folder-title {
+  min-block-size: 44px;
+}
+
 body.is-mobile .lifeos-calendar-feature__header {
   padding-block: 10px;
 }
 /* stylelint-enable selector-class-pattern */
+
+/* Opt in on the scrolling element itself. Keep fixed headers and actions outside it. */
+@property --studio-scroll-start-fade {
+  syntax: '<length>';
+  inherits: false;
+  /* stylelint-disable-next-line length-zero-no-unit -- Registered <length> requires a dimension. */
+  initial-value: 0px;
+}
+
+@property --studio-scroll-end-fade {
+  syntax: '<length>';
+  inherits: false;
+  /* stylelint-disable-next-line length-zero-no-unit -- Registered <length> requires a dimension. */
+  initial-value: 0px;
+}
+
+@keyframes studio-scroll-start-fade {
+  from {
+    --studio-scroll-start-fade: 0px;
+  }
+
+  to {
+    --studio-scroll-start-fade: 14px;
+  }
+}
+
+@keyframes studio-scroll-end-fade {
+  from {
+    --studio-scroll-end-fade: 14px;
+  }
+
+  to {
+    --studio-scroll-end-fade: 0px;
+  }
+}
+
+@supports (animation-timeline: scroll(self block)) and (animation-range: 0% 14px) {
+  @media (forced-colors: none) and (prefers-contrast: no-preference) {
+    :is(.nav-files-container, .search-result-container, .tag-container):not(:focus-within, :focus-visible) {
+      mask-image: linear-gradient(
+        var(--studio-scroll-fade-direction, to bottom),
+        transparent,
+        #000 var(--studio-scroll-start-fade),
+        #000 calc(100% - var(--studio-scroll-end-fade)),
+        transparent
+      );
+      animation:
+        studio-scroll-start-fade auto linear both,
+        studio-scroll-end-fade auto linear both;
+      animation-timeline: scroll(self block), scroll(self block);
+
+      /* Scroll metrics can differ by a few pixels at fractional zoom and with overlay scrollbars. */
+      animation-range:
+        3px 17px,
+        calc(100% - 17px) calc(100% - 3px);
+    }
+
+    /* stylelint-disable selector-class-pattern -- Shared inline-axis modifier. */
+    .studio-scroll-edge-fade--inline:not(:focus-within, :focus-visible) {
+      --studio-scroll-fade-direction: to right;
+
+      animation-timeline: scroll(self inline), scroll(self inline);
+    }
+
+    .studio-scroll-edge-fade--inline:dir(rtl) {
+      --studio-scroll-fade-direction: to left;
+    }
+
+    /* stylelint-enable selector-class-pattern */
+
+    @media (prefers-reduced-motion: reduce) {
+      :is(.nav-files-container, .search-result-container, .tag-container):not(:focus-within, :focus-visible) {
+        animation-timing-function: step-end, step-end;
+        animation-range:
+          3px 4px,
+          calc(100% - 4px) calc(100% - 3px);
+      }
+    }
+  }
+}

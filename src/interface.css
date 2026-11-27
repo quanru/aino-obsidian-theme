@@ -70,19 +70,25 @@
 }
 
 .tree-item-self,
-.nav-file-title,
-.nav-folder-title {
-  transition:
-    background-color var(--aino-motion-fast) var(--aino-motion-curve),
-    color var(--aino-motion-fast) var(--aino-motion-curve);
-}
-
 .suggestion-item {
   transition: none;
 }
 
+.notice,
+.tooltip {
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  box-shadow: inset 0 0 0 1px var(--background-modifier-border), var(--shadow-s);
+}
+
 .theme-light .notice {
   color: var(--aino-text-primary);
+}
+
+.tooltip {
+  max-inline-size: min(22rem, calc(100vw - 2rem));
 }
 
 .theme-light .tooltip {
@@ -114,12 +120,18 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   box-shadow: var(--shadow-l);
 }
 
-.menu {
-  padding: var(--size-2-2);
+.popover.hover-popover .markdown-preview-view {
+  overscroll-behavior-y: contain;
 }
 
-.menu-item {
-  border-radius: var(--aino-radius-sm);
+.menu {
+  --aino-menu-padding: var(--size-2-2);
+
+  padding: var(--aino-menu-padding);
+}
+
+.menu .menu-item {
+  border-radius: max(var(--aino-radius-xs), calc(var(--menu-radius) - var(--aino-menu-padding) - 1px));
 }
 
 .inline-title {
@@ -138,19 +150,28 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   letter-spacing: -0.015em;
 }
 
+.markdown-preview-section > :is(.el-h1, .el-h2, .el-h3) > :is(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.markdown-preview-section > .el-p > p {
+  text-wrap: pretty;
+  text-autospace: normal;
+}
+
+.markdown-preview-section > .el-p > p code {
+  text-autospace: no-autospace;
+}
+
 .markdown-rendered blockquote {
   padding: var(--size-4-2) var(--size-4-4);
   border-radius: 0 var(--aino-radius-sm) var(--aino-radius-sm) 0;
   background: var(--background-primary-alt);
 }
 
-.markdown-rendered pre,
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-  border: 1px solid var(--background-modifier-border);
-}
 /* stylelint-enable selector-class-pattern */
 
-.markdown-rendered table {
+.markdown-rendered .el-table table {
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid var(--table-border-color);
@@ -158,12 +179,56 @@ body .lifeos-view-module[data-lifeos-view='calendar'] {
   overflow: hidden;
 }
 
-.markdown-rendered th:first-child {
-  border-top-left-radius: var(--aino-radius-sm);
+/* The table owns the frame. Each pair of neighboring cells shares one rule. */
+.markdown-rendered .el-table :is(th, td) {
+  border: 0;
 }
 
-.markdown-rendered th:last-child {
-  border-top-right-radius: var(--aino-radius-sm);
+.markdown-rendered .el-table tr > :is(th, td) + :is(th, td) {
+  border-inline-start: var(--table-border-width) solid var(--table-border-color);
+}
+
+.markdown-rendered .el-table tbody > tr > td {
+  border-block-start: var(--table-border-width) solid var(--table-border-color);
+}
+
+/* LifeOS advanced lists, including the older Ant Design renderer. */
+.lifeos-advanced-table :is(table.advanced-table, .ant-table-content > table) {
+  margin-block: 0;
+}
+
+.lifeos-advanced-table :is(.advanced-table-wrapper, .ant-table) {
+  background: var(--table-background);
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > thead > tr > th, .ant-table-wrapper .ant-table-thead > tr > th.ant-table-cell) {
+  /* The legacy resizable header also paints this token on its inner box. */
+  --background-secondary-alt: var(--table-header-background);
+
+  background: var(--table-header-background);
+  transition: none;
+}
+
+.lifeos-advanced-table :is(.advanced-table > tbody > tr, .ant-table-tbody > .ant-table-row) {
+  --aino-list-row-background: var(--table-background);
+
+  background: var(--aino-list-row-background);
+  transition: none;
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > tbody > tr:not(.advanced-table-status-row), .ant-table-tbody > .ant-table-row):hover {
+  --aino-list-row-background: var(--table-row-background-hover);
+}
+
+.lifeos-advanced-table
+  :is(.advanced-table > tbody > tr > td, .ant-table-wrapper .ant-table-tbody > .ant-table-row > .ant-table-cell) {
+  /* The legacy fixed column reads this token from its inline background. */
+  --background-secondary-alt: var(--aino-list-row-background);
+
+  background: var(--aino-list-row-background);
+  transition: none;
 }
 
 .callout {
@@ -256,10 +321,23 @@ body :is(button, [tabindex]):not(input, textarea, select):focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tree-item-self,
-  .nav-file-title,
-  .nav-folder-title,
   .tag {
     transition-duration: 0.01ms;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .notice {
+    animation: aino-notice-enter var(--aino-motion-fast) var(--aino-motion-curve);
+  }
+}
+
+@keyframes aino-notice-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

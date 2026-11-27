@@ -9,7 +9,7 @@ body {
   --aino-accent-tertiary: #ea9999;
   --aino-accent-strong: #834691;
   --aino-success: #2f7a4b;
-  --aino-warning: #a56a16;
+  --aino-warning: #905b11;
   --aino-error: #c44536;
   --aino-gradient: linear-gradient(135deg, #a87bb2 0%, #c27ba0 48%, #ea9999 100%);
   --aino-radius-xs: 4px;
@@ -54,8 +54,19 @@ body {
   --blockquote-border-thickness: 3px;
   --blockquote-font-style: normal;
   --code-size: 0.9em;
+  --code-border-width: 1px;
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: currentcolor;
   --list-indent: 2em;
   --list-spacing: 0.2em;
+  --table-background: var(--aino-surface-elevated);
+  --table-header-background: var(--aino-surface-panel);
+  --table-header-background-hover: var(--table-header-background);
+  --table-row-alt-background: color-mix(in srgb, var(--table-background) 65%, var(--aino-surface-panel));
+  --table-column-alt-background: transparent;
+  --table-row-background-hover: var(--aino-accent-soft);
+  --table-row-alt-background-hover: var(--table-row-background-hover);
   --table-border-width: 1px;
   --table-header-weight: 600;
   --tag-radius: 999px;
@@ -70,7 +81,7 @@ body {
   --prompt-border-width: 1px;
   --status-bar-radius: var(--aino-radius-sm) 0 0 0;
   --embed-border-start: 3px solid var(--background-modifier-border);
-  --canvas-color: var(--text-normal);
+  --canvas-color: var(--text-faint);
 }
 
 .theme-light {
@@ -85,7 +96,7 @@ body {
   --aino-accent-soft-strong: #e8dbea;
   --aino-text-primary: #1b2430;
   --aino-text-secondary: #5d6875;
-  --aino-text-muted: #88929d;
+  --aino-text-muted: #626b75;
   --color-base-00: var(--aino-surface-elevated);
   --color-base-05: var(--aino-surface-panel);
   --color-base-10: #f8f4ed;
@@ -170,11 +181,11 @@ body {
   --code-function: var(--aino-accent-strong);
   --code-important: var(--aino-error);
   --code-keyword: var(--aino-accent-strong);
-  --code-operator: var(--aino-accent-primary);
+  --code-operator: var(--aino-accent-strong);
   --code-property: var(--aino-warning);
   --code-punctuation: var(--aino-text-secondary);
   --code-string: var(--aino-success);
-  --code-tag: var(--aino-accent-primary);
+  --code-tag: var(--aino-accent-strong);
   --code-value: var(--aino-warning);
   --link-color: var(--aino-accent-strong);
   --link-color-hover: #713c7d;
@@ -183,13 +194,9 @@ body {
   --link-unresolved-color: var(--aino-text-muted);
   --list-marker-color: var(--aino-text-muted);
   --list-marker-color-hover: var(--aino-text-secondary);
-  --table-background: var(--aino-surface-elevated);
   --table-border-color: rgb(27 36 48 / 10%);
-  --table-header-background: var(--aino-surface-muted);
   --table-header-border-color: rgb(27 36 48 / 16%);
   --table-header-color: var(--aino-text-primary);
-  --table-row-alt-background: var(--aino-surface-panel);
-  --table-row-background-hover: var(--aino-surface-muted);
   --tag-color: var(--aino-accent-strong);
   --tag-color-hover: #713c7d;
   --tag-background: var(--aino-accent-soft);
@@ -199,11 +206,11 @@ body {
   --metadata-background: var(--aino-surface-panel);
   --metadata-border-color: rgb(27 36 48 / 8%);
   --callout-border-width: 1px;
-  --callout-border-opacity: 18%;
+  --callout-border-opacity: 0.18;
   --callout-title-color: var(--aino-text-primary);
   --canvas-background: var(--aino-surface-canvas);
   --canvas-card-label-color: var(--aino-text-secondary);
-  --graph-line: rgb(93 104 117 / 28%);
+  --graph-line: rgb(93 104 117 / 70%);
   --graph-node: var(--aino-accent-primary);
   --graph-node-focused: var(--aino-accent-tertiary);
   --graph-node-tag: var(--aino-accent-secondary);
@@ -226,7 +233,7 @@ body {
   --aino-accent-soft-strong: #43365c;
   --aino-text-primary: #eaf0f6;
   --aino-text-secondary: #b7c2cc;
-  --aino-text-muted: #8795a1;
+  --aino-text-muted: #909da9;
   --aino-success: #5bb575;
   --aino-warning: #e3b159;
   --aino-error: #e16e61;
@@ -315,11 +322,11 @@ body {
   --code-function: var(--aino-accent-strong);
   --code-important: var(--aino-error);
   --code-keyword: var(--aino-accent-strong);
-  --code-operator: var(--aino-accent-primary);
+  --code-operator: var(--aino-accent-strong);
   --code-property: var(--aino-warning);
   --code-punctuation: var(--aino-text-secondary);
   --code-string: var(--aino-success);
-  --code-tag: var(--aino-accent-primary);
+  --code-tag: var(--aino-accent-strong);
   --code-value: var(--aino-warning);
   --link-color: var(--aino-accent-strong);
   --link-color-hover: #d2a7dc;
@@ -328,13 +335,9 @@ body {
   --link-unresolved-color: var(--aino-text-muted);
   --list-marker-color: var(--aino-text-muted);
   --list-marker-color-hover: var(--aino-text-secondary);
-  --table-background: var(--aino-surface-elevated);
   --table-border-color: rgb(231 238 246 / 9%);
-  --table-header-background: var(--aino-surface-muted);
   --table-header-border-color: rgb(231 238 246 / 16%);
   --table-header-color: var(--aino-text-primary);
-  --table-row-alt-background: var(--aino-surface-panel);
-  --table-row-background-hover: var(--aino-surface-muted);
   --tag-color: var(--aino-accent-strong);
   --tag-color-hover: #d2a7dc;
   --tag-background: var(--aino-accent-soft);
@@ -344,11 +347,11 @@ body {
   --metadata-background: var(--aino-surface-panel);
   --metadata-border-color: rgb(231 238 246 / 8%);
   --callout-border-width: 1px;
-  --callout-border-opacity: 22%;
+  --callout-border-opacity: 0.22;
   --callout-title-color: var(--aino-text-primary);
   --canvas-background: var(--aino-surface-canvas);
   --canvas-card-label-color: var(--aino-text-secondary);
-  --graph-line: rgb(183 194 204 / 28%);
+  --graph-line: rgb(183 194 204 / 60%);
   --graph-node: var(--aino-accent-primary);
   --graph-node-focused: var(--aino-accent-tertiary);
   --graph-node-tag: var(--aino-accent-secondary);

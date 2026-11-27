@@ -61,6 +61,24 @@ body:is(.theme-light, .theme-dark)
   color: var(--text-accent);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body:is(.theme-light, .theme-dark)
+    :is(
+      .timeline-navigation > button,
+      .lifeos-calendar-feature__navigation > button,
+      .periodic-notes-panel .periodic-nav-btn,
+      .periodic-notes-panel .periodic-today-btn,
+      .m-task-date-quick-menu__month-button,
+      .lifeos-ai-review-view__navigation > button,
+      .lifeos-ai-review-view .lifeos-review-period-navigation > button
+    ):hover:not(:disabled, [aria-disabled='true']) {
+    background: var(--background-modifier-hover);
+    color: var(--text-normal);
+    box-shadow: none;
+    transform: none;
+  }
+}
+
 body:is(.theme-light, .theme-dark)
   :is(
     .timeline-navigation > button,
@@ -70,11 +88,12 @@ body:is(.theme-light, .theme-dark)
     .m-task-date-quick-menu__month-button,
     .lifeos-ai-review-view__navigation > button,
     .lifeos-ai-review-view .lifeos-review-period-navigation > button
-  ):hover:not(:disabled) {
-  background: var(--background-modifier-hover);
+  ):active:not(:disabled, [aria-disabled='true']) {
+  background: var(--aino-accent-soft-strong);
+  background-image: linear-gradient(color-mix(in srgb, var(--text-normal) 16%, transparent), transparent 3px);
   color: var(--text-normal);
-  box-shadow: none;
   transform: none;
+  transition-duration: 0s;
 }
 
 body:is(.theme-light, .theme-dark)
@@ -107,18 +126,29 @@ body:is(.theme-light, .theme-dark)
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented {
-  padding: 3px;
-  border-radius: var(--aino-radius-sm);
+  padding: var(--size-4-1);
+  border-radius: var(--aino-radius-md);
   background: var(--background-primary-alt);
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button {
+  border-radius: var(--aino-radius-sm);
   box-shadow: none;
 }
 
 body:is(.theme-light, .theme-dark) .timeline-navigation .timeline-unit-selector .lifeos-segmented > button.is-active {
   background: var(--aino-accent-soft);
   color: var(--text-accent);
+}
+
+:is(
+  .timeline-navigation > .date-range-label,
+  .lifeos-calendar-feature__left > h2,
+  .periodic-notes-panel .periodic-nav-title,
+  .m-task-date-quick-menu__month-label,
+  .lifeos-review-period-navigation > strong
+) {
+  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,6 +27,10 @@ Aino theme is part of a broader local-first Markdown ecosystem:
 - System fonts and local CSS only: no external font, image, or network dependency.
 - Reduced-motion support and no `!important` or expensive `:has()` selectors.
 
+## Install from Obsidian
+
+Open **Settings → Appearance → Themes → Manage**, search for **Aino** by **leyang**, and select **Install and use**. The [Obsidian community listing](https://community.obsidian.md/themes/aino) also opens in the app.
+
 ## Manual installation
 
 1. Download `manifest.json` and `theme.css` from the latest release.
@@ -72,6 +76,6 @@ Aino 是一款为 Obsidian 打造的温暖、专注的主题，支持完整深�
 
 [MIT](./LICENSE) © 2026 quanru
 
-Theme sources live in `src/palette.css`, `src/interface.css`, `src/controls.css`, and `src/density.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.
+Theme sources live in `src/palette.css`, `src/interface.css`, `src/controls.css`, `src/density.css`, and `src/scroll-edge-fade.css`. Run `npm run build` after editing to generate the installable `theme.css`; `npm run check` verifies that the distribution matches its sources.
 
 Public release titles and notes default to English. Before tagging, update `RELEASE_NOTES.md` with a `## <version>` heading matching the manifest; the release workflow validates this file and uses it for the draft release.

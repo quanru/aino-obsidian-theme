@@ -45,6 +45,15 @@ body.is-mobile .workspace-drawer.mod-left .workspace-sidedock-vault-profile {
   background: transparent;
 }
 
+body.is-mobile .workspace-drawer .nav-files-container {
+  overscroll-behavior-y: contain;
+}
+
+body.is-mobile .workspace-drawer .nav-file-title,
+body.is-mobile .workspace-drawer .nav-folder-title {
+  min-block-size: 44px;
+}
+
 body.is-mobile .lifeos-calendar-feature__header {
   padding-block: 10px;
 }
